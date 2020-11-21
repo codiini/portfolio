@@ -1,0 +1,11 @@
+@mixin basic-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@mixin sub-heading-text {
+  font-weight: 700;
+  font-size: clamp(23px, 3vw, 30px);
+  color: $ocean-green;
+  margin-bottom: 10px;
+}
