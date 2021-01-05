@@ -9,7 +9,7 @@
           <div class="project_image">
             <a href="">
               <img
-                src="@/components/sections/featured-projects/ip-address-tracker/demo.png"
+                src="@/assets/images/demo.png"
                 alt=""
               />
             </a>
