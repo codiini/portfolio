@@ -5,7 +5,7 @@
 }
 @mixin sub-heading-text {
   font-weight: 700;
-  font-size: clamp(23px, 3vw, 30px);
+  font-size: clamp(25px, 3vw, 33px);
   color: $ocean-green;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
