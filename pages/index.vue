@@ -1,68 +1,53 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">portfolio</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+  <div>
+    <Nav />
+    <div class="main_content">
+      <Hero />
+      <About />
+      <!-- <Experience /> -->
+      <Projects />
+      <Articles />
+      <Contact />
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import Nav from "@/components/include/Nav";
+import Hero from "@/components/sections/Hero";
+import About from "@/components/sections/About";
+// import Experience from "@/components/sections/Experience";
+import Articles from "@/components/sections/Articles";
+import Projects from "@/components/sections/Projects";
+import Contact from "@/components/sections/Contact";
+export default {
+  components: {
+    Nav,
+    Hero,
+    About,
+    // Experience,
+    Articles,
+    Projects,
+    Contact,
+  },
+};
 </script>
 
-<style>
-/* Sample `apply` at-rules with Tailwind CSS
-.container {
-@apply min-h-screen flex justify-center items-center text-center mx-auto;
+<style lang="scss">
+.main_content {
+  padding: 0 100px;
 }
-*/
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+section {
+  padding: 30px 0;
 }
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.social_links ul {
+  @include basic-flex;
+  height: 100px;
+  padding: 0 20px;
 }
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.twitter-icon,
+.github-icon,
+.linkedin-icon {
+  stroke: $white-text;
 }
 </style>
