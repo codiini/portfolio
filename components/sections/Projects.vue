@@ -1,17 +1,14 @@
 <template>
-  <div class="projects_container">
+  <section class="projects_container">
     <h3 class="projects__title">Some Things I've Built</h3>
-    <section class="projects">
+    <div class="projects">
       <template v-for="project in projects">
         <div class="project" :key="project.id">
           <h2 class="project_title">{{ project.title }}</h2>
           <p class="project_description">{{ project.description }}</p>
           <div class="project_image">
             <a href="">
-              <img
-                src="@/assets/images/demo.png"
-                alt=""
-              />
+              <img src="@/assets/images/demo.png" alt="" />
             </a>
           </div>
 
@@ -25,8 +22,8 @@
           </div>
         </div>
       </template>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script>
@@ -39,24 +36,29 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.projects_container {
+  margin-top: 200px;
+}
 .projects {
   margin: 0 auto;
   column-count: 2;
   column-gap: 3.2em;
   &__title {
     @include sub-heading-text;
+    text-align: left;
+    display: flex;
+    align-items: flex-end;
   }
   .project {
     height: 700px;
     width: 100%;
     max-width: 500px;
     margin: 0 auto 20px auto;
-    // border-radius: 10px;
-    background-color: #a8b2d1;
+    background-color: $ocean-green;
     overflow: hidden;
     margin: 3em 0 0 0;
     &_title {
-      color: #fff;
+      color: #172a45;
       font-size: 20px;
       font-weight: 800;
       text-transform: uppercase;
@@ -66,7 +68,7 @@ export default {
       padding: 5px 20px;
       font-size: clamp(15px, 20px, 25px);
       font-weight: 700;
-      color: rgb(250, 208, 20);
+      color: #0f3057;
     }
     &_image {
       @include basic-flex;
@@ -85,13 +87,13 @@ export default {
       padding: 10px 20px;
       p {
         font-weight: 600;
-        color: rgb(250, 208, 20);
+        color: rgb(0, 0, 0);
       }
       .tech_list {
         @include basic-flex;
         li {
           margin: 10px;
-          color: $deep-blue;
+          color: #020c1b;
         }
       }
     }
@@ -99,12 +101,13 @@ export default {
 }
 
 /* projects on small screens */
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 700px) {
   .projects {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    column-gap: 1em;
   }
 }
 </style>
